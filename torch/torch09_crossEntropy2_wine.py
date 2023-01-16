@@ -15,11 +15,9 @@ USE_CUDA = torch.cuda.is_available()
 DEVICE  = torch.device('cuda:0' if USE_CUDA else 'cpu')
 print('torch:', torch.__version__,'사용DEVICE :',DEVICE)
 
-
 datasets = load_wine()
 x = datasets.data
 y = datasets.target
-
 
 x = torch.FloatTensor(x)
 y = torch.LongTensor(y)
@@ -29,12 +27,10 @@ print(y.unique())
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, shuffle=True, train_size=0.2, random_state=42 ,) #stratify=y)
 
-
 x_train = torch.FloatTensor(x_train)
 x_test  = torch.FloatTensor(x_test)
 y_train = torch.LongTensor(y_train).to(DEVICE) #Float이 길어지면 Double로 바꿔줘야함
 y_test = torch.LongTensor(y_test).to(DEVICE) #int가 길어지면 LONG으로 바꿔줌
-
 
 from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
