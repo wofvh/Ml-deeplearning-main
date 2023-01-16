@@ -14,8 +14,7 @@ print('torch :',torch.__version__,'\n','사용DEVICE : ',DEVICE)
 print(torch.cuda.device_count())
 
 #1.데이터
-#x = np.array([1,2,3,4,5,6,7,8,9,10])
-#y = np.array([1,2,3,4,5,6,7,8,9,10])
+
 x_train = np.array([1,2,3,4,5,6,7,8,9,10])
 x_test = np.array([8,9,10])
 
