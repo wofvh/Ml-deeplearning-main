@@ -15,7 +15,6 @@ USE_CUDA = torch.cuda.is_available()
 DEVICE  = torch.device('cuda:0' if USE_CUDA else 'cpu')
 print('torch:', torch.__version__,'사용DEVICE :',DEVICE)
 
-
 datasets = fetch_covtype()
 x = datasets.data
 y = datasets.target
